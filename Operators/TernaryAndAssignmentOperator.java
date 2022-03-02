@@ -1,4 +1,4 @@
-package Operators;
+package operators;
 
 public class TernaryAndAssignmentOperator {
     public static void main(String[] args) {
