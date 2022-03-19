@@ -8,7 +8,7 @@ package constructor;
     // By clone() method of Object class.
 
 public class CopyConstructor {
-    int number;
+     int number;
 
     CopyConstructor(int n) {
         number = n;
@@ -28,12 +28,39 @@ public class CopyConstructor {
         CopyConstructor c2 = new CopyConstructor(c1);
         // method 2
 
-        /*
-          CopyConstructor c2 = new CopyConstructor();
-          c2.number=c1.number;
-        */
+        
+        //   CopyConstructor c2 = new CopyConstructor();
+        //   c2.number=c1.number;
+        
 
         c1.display();
         c2.display();
     }
 }
+
+// public class CopyConstructor {
+//     public static void main(String[] args)
+//     {
+//         ConstructorCopy copy=new ConstructorCopy(3,4);
+//         ConstructorCopy newcopy=new ConstructorCopy(copy);
+
+// //        newcopy.var1= copy.var1;
+// //        newcopy.var2=copy.var1;
+//     }
+// }
+
+// class ConstructorCopy
+// {
+//     final int var1,var2;
+//     ConstructorCopy(int val1,int val2)
+//     {
+//         var1=val1;
+//         var2=val2;
+//     }
+//     ConstructorCopy(ConstructorCopy copy)
+//     {
+//         var1=copy.var1+1;
+//         var2=copy.var2+1;
+//         System.out.println(var1+ " " + var2);
+//     }
+// }
