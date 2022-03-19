@@ -1,8 +1,7 @@
 package studentinfo;
 
-import java.io.Serializable;
 
-class StudentDetails implements Serializable{
+class StudentDetails{
     private String name,gender,mail;
     private long phoneNumber;
     private int id;
