@@ -11,7 +11,12 @@ public class ThrowKeyword {
 
     public static void main(String args[]) {
         // call validate_Age method
-        validate_Age(10);
+        try {
+            validate_Age(10);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
         System.out.println("rest of the code...");
     }
 }

@@ -1,5 +1,4 @@
 package interviewqueueing;
-
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -7,7 +6,7 @@ import java.util.Scanner;
 public class InterviewQueue {
     Queue<Integer> hall = new LinkedList<>();
     Queue<Integer> room = new LinkedList<>();
-    int totalAttendees = 15;
+    int totalAttendees = 5;
     void fillHall(){
         for(int i=1;i<=totalAttendees;i++){
             hall.add(i);
@@ -25,8 +24,8 @@ public class InterviewQueue {
         interviewQueue.fillHall();
         interviewQueue.fillRoom();
         boolean isCandidatePresent = false;
-        do{
-            System.out.println("Options : \n1.View Attendees in waiting hall. \n2.View Attendees in waiting room. \n3.Enqueue a attendee. \n4.Dequeue a attendee.");
+        while(presentCandidate<=totalAttendees){
+            System.out.println("Options : \n1.View Attendees in waiting hall. \n2.View Attendees in waiting room. \n3.Call a attendee. \n4.Remove a attendee.");
             System.out.println("Enter any option : ");
             int option = sc.nextInt();
             switch(option){
@@ -51,6 +50,7 @@ public class InterviewQueue {
                     if(isCandidatePresent == true){
                         System.out.println("Interview finished for candidate "+presentCandidate+".");
                         isCandidatePresent = false;
+
                     }else{
                         System.out.println("There is no Attendee in the room.");
                     }
@@ -58,7 +58,8 @@ public class InterviewQueue {
                 default:
                     System.out.println("Invalid option.");       
             }
-        }while(presentCandidate<totalAttendees);
+        }
+        System.out.println("Interview ends..");
         sc.close();
     }
     public static void main(String[] args) {

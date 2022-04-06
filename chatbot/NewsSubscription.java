@@ -1,21 +1,21 @@
-
+package chatbot;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
 public class NewsSubscription {
 
-    Stack<SelectedOptions> stack = new Stack<SelectedOptions>();
+    Stack<SelectedOptions> stack = new Stack<>();
 
-    public static void main(String args[]) {
+    void subscription(){
         NewsSubscription newsSubscription = new NewsSubscription();
         int choice;
         newsSubscription.stack.push(new SelectedOptions(0, 0));
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         newsSubscription.print(0, 0);
         do {
             System.out.println();
-            choice = input.nextInt();
+            choice = sc.nextInt();
             if (choice == 9) {
                 newsSubscription.stack.pop();
 
@@ -29,7 +29,7 @@ public class NewsSubscription {
             newsSubscription.print(top.getLevel(), top.getChoice());
 
         } while (choice != 0);
-        input.close();
+        sc.close();
         System.out.println("Exited...");
     }
 
@@ -42,7 +42,7 @@ public class NewsSubscription {
     private ArrayList<String> getChoices(int level, int choice) {
         ArrayList<String> choiceList = new ArrayList<>();
         if (level == 0) {
-            System.out.println("\n Select your preferred Language");
+            System.out.println("\nSelect your preferred Language");
             choiceList.add(Level1.OPTION_1.toString());
             choiceList.add(Level1.OPTION_2.toString());
             choiceList.add(Level1.OPTION_3.toString());
@@ -69,5 +69,10 @@ public class NewsSubscription {
             System.out.println("0-Exit");
         }
         return choiceList;
+    }
+
+    public static void main(String[] args) {
+        NewsSubscription newsSubscription = new NewsSubscription();
+        newsSubscription.subscription();
     }
 }

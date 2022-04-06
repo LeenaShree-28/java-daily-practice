@@ -6,8 +6,7 @@ enum Directions {
 
 public class EnumBasics {
     // The Enum in Java is a data type which contains a fixed set of constants.
-    // The enum can be defined within or outside the class because it is similar to
-    // a class.
+    // The enum can be defined within or outside the class because it is similar to a class.
     // The semicolon (;) at the end of the enum constants are optional.
 
     // defining the enum inside the class
